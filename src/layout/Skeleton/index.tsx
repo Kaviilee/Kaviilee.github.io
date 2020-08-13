@@ -14,11 +14,11 @@ interface SkeletonProps {
 
 const links = [
   {
-    href: 'https://anran758.github.io/blog',
+    href: 'https://kaviilee.github.io/blog',
     label: '博客',
   },
   {
-    href: 'https://github.com/anran758',
+    href: 'https://github.com/kaviilee',
     label: 'Github',
   },
 ];

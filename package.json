@@ -22,7 +22,7 @@
     "url": "git+https://github.com/Kaviilee/Kaviilee.github.io.git"
   },
   "homepage": "https://github.com/Kaviilee/Kaviilee.github.io#readme",
-  "author": "anran758",
+  "author": "kaviilee",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
