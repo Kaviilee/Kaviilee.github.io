@@ -18,7 +18,7 @@ deploy:
   # 将 `local_dir` 内容推送到 `target_branch` 分支, 默认为: gh-pages
   target_branch: master
   on:
-    branch: develop
+    branch: dev
 
   # 确保 skip_cleanup 设置为 true
   # 否则 Travis CI 会删除在构建期间创建的所有文件，这可能会删除正在尝试上传的文件。
