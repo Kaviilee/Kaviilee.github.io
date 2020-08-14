@@ -25,6 +25,10 @@ const links: LinkProps[] = [
     href: 'https://github.com/kaviilee',
     target: '_blank',
   },
+  {
+    name: 'QQ',
+    href: 'tencent://message/?uin=756281971&Menu=yes'
+  }
   // {
   //   name: 'segmentfault',
   //   href: 'https://segmentfault.com/u/anran758',
