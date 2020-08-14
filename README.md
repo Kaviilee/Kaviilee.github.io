@@ -1,8 +1,8 @@
 # Kaviilee's Homepage
 
-[![Travis (.com)](https://img.shields.io/travis/com/anran758/anran758.github.io)](https://travis-ci.com/github/anran758/anran758.github.io/)
+[![Travis (.com)](https://img.shields.io/travis/com/kaviilee/kaviilee.github.io)](https://travis-ci.com/github/Kaviilee/kaviilee.github.io/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![GitHub](https://img.shields.io/github/license/anran758/anran758.github.io)](https://github.com/anran758/anran758.github.io/blob/master/LICENSE)
+[![GitHub](https://img.shields.io/github/license/kaviilee/kaviilee.github.io)](https://github.com/kaviilee/kaviilee.github.io/blob/master/LICENSE)
 
 > Web Demo 展示页
 
