@@ -1,11 +1,12 @@
 import path from 'path';
 import { CustomConfig } from './config.d';
+import { PROJECT_PATH } from '../constant'
 
 const projectPaths: CustomConfig = {
   // 源码目录
-  sourceRoot: path.resolve(__dirname, '../../src'),
+  sourceRoot: path.resolve(PROJECT_PATH, 'src'),
   // 构建后输出目录
-  buildRoot: path.resolve(__dirname, '../../dist'),
+  buildRoot: path.resolve(PROJECT_PATH, 'dist'),
   // 静态资源根目录
   staticDir: 'static',
 };

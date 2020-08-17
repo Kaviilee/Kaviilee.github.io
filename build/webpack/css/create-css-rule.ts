@@ -3,6 +3,7 @@ import { resolve } from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import { getPostcssOption } from './postcss-options';
+import { PROJECT_PATH } from '../../../config/constant'
 
 export function createCSSRule(
   test: RuleSetCondition,
@@ -33,7 +34,7 @@ export function createCSSRule(
       options: {
         modules: {
           mode: 'local',
-          context: resolve(__dirname, '..', '..', '..', 'src'),
+          context: resolve(PROJECT_PATH, 'src'),
           localIdentName,
         },
         localsConvention: 'camelCaseOnly',

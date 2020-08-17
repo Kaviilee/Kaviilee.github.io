@@ -4,6 +4,7 @@ import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 
 import webpackCommonConf from './webpack.base';
 import config from '../../config/webpack/prod';
@@ -79,6 +80,8 @@ const webpackProdConf: webpack.Configuration = {
     },
   },
   plugins: [
+    // 打包编译前清理dist目录
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: config.template,

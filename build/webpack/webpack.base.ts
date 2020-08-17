@@ -2,6 +2,7 @@ import path from 'path';
 import { Configuration } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+const WebpackBar = require('webpackbar');
 
 import { createCSSRule } from './css/create-css-rule';
 
@@ -116,6 +117,7 @@ const webpackConfig: Configuration = {
         getCopyRootFileOpt('LICENSE'),
       ],
     }),
+    new WebpackBar(),
   ],
   optimization: {
     runtimeChunk: 'single',
