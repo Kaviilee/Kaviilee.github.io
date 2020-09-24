@@ -19,9 +19,9 @@ function startApp() {
   app.use(express.static(distPath));
 
   // 监听端口
-  app.listen(PORT, (err) => {
+  app.listen(PORT, (err: any) => {
     if (err) {
-      console.log(err);
+      throw(err)
       return;
     }
 
@@ -37,7 +37,7 @@ if (fs.existsSync(distPath)) {
   startApp();
 } else {
   const command = 'npm run build';
-  exec(command, (err) => {
+  exec(command, (err: any) => {
     if (err) {
       console.log(red(`build error: \n\n${err}`));
       return;
