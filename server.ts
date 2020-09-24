@@ -19,11 +19,11 @@ function startApp() {
   app.use(express.static(distPath));
 
   // 监听端口
-  app.listen(PORT, (err: any) => {
-    if (err) {
-      throw(err)
-      return;
-    }
+  app.listen(PORT, () => {
+    // if (err) {
+    //   throw(err)
+    //   return;
+    // }
 
     console.log(
       green(
