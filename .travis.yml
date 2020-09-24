@@ -6,9 +6,9 @@ node_js:
 
 # 运行脚本
 install:
-  - yarn install # npm ci
+  - npm install # npm ci
 script:
-  - yarn build # npm run build
+  - npm run build # npm run build
   - commitlint-travis
 
 # 部署信息
