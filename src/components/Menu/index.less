@@ -29,16 +29,15 @@
   &.activeItem {
     background-color: #e6f7ff;
     color: #1890ff;
-    // border-right: 3px solid #1890ff;
     &::after {
       position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
       border-right: 3px solid #1890ff;
-      transform: scaleY(.0001);
-      opacity: 0;
-      transition: transform .15s cubic-bezier(.215,.61,.355,1),opacity .15s cubic-bezier(.215,.61,.355,1);
+      transform: scaleY(1);
+      opacity: 1;
+      transition: transform .15s cubic-bezier(.645,.045,.355,1),opacity .15s cubic-bezier(.645,.045,.355,1);
       content: "";
     }
   }

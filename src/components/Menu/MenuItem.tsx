@@ -17,12 +17,14 @@ export const MenuItem: FC<MenuItemProps> = ({
   className,
   disabled,
   disabledTips,
-  style
+  style,
+  level
 }) => {
   return (
     <li
       className={classnames(styles.menuItem, className, {
-        [styles.activeItem]: active,
+        [styles.activeItem]: level && level > 1 && active,
+        [styles.active]: level && level === 1 && active,
         [styles.disabled]: disabled,
       })}
       role="menuitem"

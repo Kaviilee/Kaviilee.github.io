@@ -96,6 +96,7 @@ export const MenuConfigContainer: FC<MenuConfigContainerProps> = (props) => {
           disabledTips={data.disabledTips || '正在开发中...'}
           style={level === 1 ? {} : { paddingLeft: 24 * level }}
           {...data}
+          level={level}
           key={key}
         />
       );

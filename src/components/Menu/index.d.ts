@@ -25,6 +25,7 @@ export interface MenuItemProps extends MenuDataItemProps {
   active?: boolean;
   className?: string;
   style?: React.CSSProperties;
+  level?: number;
 }
 
 export interface SubmenuProps extends MenuDataSubmenuItemProps {

@@ -29,16 +29,6 @@ const links: LinkProps[] = [
     name: 'QQ',
     href: 'tencent://message/?uin=756281971&Menu=yes'
   }
-  // {
-  //   name: 'segmentfault',
-  //   href: 'https://segmentfault.com/u/anran758',
-  //   target: '_blank',
-  // },
-  // {
-  //   name: '知乎专栏',
-  //   href: 'https://zhuanlan.zhihu.com/c_1147180666474176512',
-  //   target: '_blank',
-  // },
 ];
 
 export const Introduction = () => {
