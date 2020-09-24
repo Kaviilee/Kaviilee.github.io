@@ -24,7 +24,23 @@
   }
 
   &.active {
-    background-color: #e9e9f1;
+    color: #1890ff;
+  }
+  &.activeItem {
+    background-color: #e6f7ff;
+    color: #1890ff;
+    // border-right: 3px solid #1890ff;
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-right: 3px solid #1890ff;
+      transform: scaleY(.0001);
+      opacity: 0;
+      transition: transform .15s cubic-bezier(.215,.61,.355,1),opacity .15s cubic-bezier(.215,.61,.355,1);
+      content: "";
+    }
   }
 
   .icon + span {
@@ -89,5 +105,49 @@
 
   a {
     pointer-events: none;
+  }
+}
+
+.subMenu {
+  position: relative;
+}
+.subMenu .submenuTitle:hover ~ .hoverMenuWrapper, .hoverMenuWrapper:hover {
+  display: block;
+}
+
+.hoverMenuWrapper {
+  display: none;
+  position: absolute;
+  top: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-width: 160px;
+  left: 80px;
+  padding-left: 6px;
+  box-shadow: 6px 6px 4px rgba(0,0,0,.08);
+}
+
+.hoverMenu {
+  .active {
+    background-color: #e6f7ff;
+    color: #1890ff;
+  }
+  background-color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
+  left: 4px;
+  // transition: background .3s,width .3s cubic-bezier(.2,0,0,1) 0s;
+  li {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px;
+    // margin: 4px 0;
+    &:hover {
+      color:  #1890ff;
+      // box-shadow: inset 0 0 0 1px #e9e9f1;
+    }
+  }
+  ul, ol, li {
+    list-style: none;
   }
 }

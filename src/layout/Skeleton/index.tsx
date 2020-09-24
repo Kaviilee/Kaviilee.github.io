@@ -1,6 +1,8 @@
 import React, { FC, useState, useEffect } from 'react';
 import { observer } from 'mobx-react';
 
+import siteConf from 'Config/site';
+
 import { Header } from './Header';
 import { Sidebar, UserInfoProps } from './Sidebar';
 
@@ -16,10 +18,12 @@ const links = [
   {
     href: 'https://kaviilee.github.io/blog',
     label: '博客',
+    isBlank: true
   },
   {
     href: 'https://github.com/kaviilee',
     label: 'Github',
+    isBlank: true
   },
 ];
 
@@ -56,8 +60,7 @@ export function createSkeleton() {
   const store = new SkeletonStore();
   store.initUserInfo();
 
-  console.log('createSkeleton', store.githubUserInfo);
-  const SkeletonImpl = (props: SkeletonProps) => (
+  const SkeletonImpl: FC<SkeletonProps> = (props) => (
     <Skeleton userInfo={store.githubUserInfo} {...props} />
   );
 

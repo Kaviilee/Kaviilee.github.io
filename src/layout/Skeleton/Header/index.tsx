@@ -6,6 +6,7 @@ import styles from './index.less';
 interface LinkItemProps {
   href: string;
   label: string;
+  isBlank: boolean;
 }
 
 interface HeaderProps {
@@ -21,11 +22,16 @@ export const Header: FC<HeaderProps> = React.memo(
         {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
       </span>
       <ul className={styles.links}>
-        {links.map((item, idx) => (
-          <a key={idx} className={styles.link} href={item.href}>
-            {item.label}
-          </a>
-        ))}
+        {links.map((item, idx) => {
+          const aProps = {
+            className: styles.link,
+            href: item.href,
+            ...(item.isBlank ? { target: '_blank' } : {}),
+          };
+          return (
+            <a key={idx} {...aProps}>{item.label}</a>
+          )
+        })}
       </ul>
     </header>
   )
