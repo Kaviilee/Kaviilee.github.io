@@ -6,14 +6,21 @@
 
 > Web Demo 展示页
 
+## TDDO
+
+- [ ] 完成 Demo 页基础骨架
+- [ ] 使用 `mobx` 进行数据管理
+- [ ] 支持配置路由
+- [ ] 完成“数据概况”页
+
 ## start
 
 ``` shell
 # 开发模式
-npm run dev
+npm run start
 
 # 生产打包
-npm run build
+npm run start
 
 # 校验 typescitpt 是否符合规范
 npm run lint:ts
@@ -57,6 +64,28 @@ commit 结构 (注意隔行):
 | `chore:`    | 其他不会修改 src 或测试文件的更改，如 `.gitignore`,`package.json`、`yarn.json` 等                                      |
 | `revert:`   | 回退旧版本                                                             |
 
+commit 示例:
+
+``` shell
+feat(html): HTML 模板新增 favicon
+```
+
+``` shell
+fix: 纠正代码中的错别字
+
+有关已修正错字的详细信息，请参见 issue
+
+closes issue #12
+```
+
+``` shell
+build(webpack): 调整 webpack 构建方式
+```
+
+``` shell
+ci(Travis): Travis ci 添加 commitlint-travis 脚本
+```
+
 更多示例参见: [约定式提交](https://www.conventionalcommits.org/zh-hans)
 
 ## 分支
@@ -64,4 +93,4 @@ commit 结构 (注意隔行):
 | branch    | 用途     |
 | --------- | -------- |
 | `master`  | 用于 Github Pages 展示页面 |
-| `dev` | 开发分支 |
+| `develop` | 开发分支 |
