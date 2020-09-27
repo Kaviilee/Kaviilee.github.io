@@ -1,0 +1,140 @@
+@import '@/styles/default';
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+
+  &::before,
+  &::after {
+    display: flex;
+  }
+
+  &-cnter {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-justify-start {
+    justify-content: flex-start;
+  }
+  &-justify-end {
+    justify-content: flex-end;
+  }
+  &-justify-center {
+    justify-content: center;
+  }
+  &-justify-space-between {
+    justify-content: space-between;
+  }
+  &-justify-space-around {
+    justify-content: space-around;
+  }
+  &-align-top {
+    align-items: flex-start;
+  }
+  &-align-middle {
+    align-items: center;
+  }
+  &-align-bottom {
+    align-items: flex-end;
+  }
+}
+
+.loop-grid-columns(@index, @class) when (@index > 0) {
+  .col@{class}-@{index} {
+    display: block;
+    flex: 0 0 percentage((@index / @grid-columns));
+    max-width: percentage((@index / @grid-columns));
+  }
+  .col@{class}-push-@{index} {
+    left: percentage((@index / @grid-columns));
+  }
+  .col@{class}-pull-@{index} {
+    right: percentage((@index / @grid-columns));
+  }
+  .col@{class}-offset-@{index} {
+    margin-left: percentage((@index / @grid-columns));
+  }
+  .col@{class}-order-@{index} {
+    order: @index;
+  }
+  .loop-grid-columns((@index - 1), @class);
+}
+
+.loop-grid-columns(@index, @class) when (@index = 0) {
+  .col@{class}-@{index} {
+    display: none;
+  }
+  .col-push-@{index} {
+    left: auto;
+  }
+  .col-pull-@{index} {
+    right: auto;
+  }
+  .col@{class}-push-@{index} {
+    left: auto;
+  }
+  .col@{class}-pull-@{index} {
+    right: auto;
+  }
+  .col@{class}-offset-@{index} {
+    margin-left: 0;
+  }
+  .col@{class}-order-@{index} {
+    order: 0;
+  }
+}
+
+.make-grid(@class: ~'') {
+  .loop-grid-columns(@grid-columns, @class);
+}
+
+.make-grid();
+
+// Extra small grid
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+
+.make-grid(-xs);
+
+// Small grid
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+
+@media (min-width: @screen-sm-min) {
+  .make-grid(-sm);
+}
+
+// Medium grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+
+@media (min-width: @screen-md-min) {
+  .make-grid(-md);
+}
+
+// Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: @screen-lg-min) {
+  .make-grid(-lg);
+}
+
+// Extra Large grid
+//
+// Columns, offsets, pushes, and pulls for the full hd device range.
+
+@media (min-width: @screen-xl-min) {
+  .make-grid(-xl);
+}
+
+// Extra Extra Large grid
+//
+// Columns, offsets, pushes, and pulls for the full hd device range.
+
+@media (min-width: @screen-xxl-min) {
+  .make-grid(-xxl);
+}
