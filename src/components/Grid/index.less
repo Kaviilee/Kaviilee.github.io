@@ -41,46 +41,46 @@
 }
 
 .loop-grid-columns(@index, @class) when (@index > 0) {
-  .col@{class}-@{index} {
+  :global(.col@{class}-@{index}) {
     display: block;
     flex: 0 0 percentage((@index / @grid-columns));
     max-width: percentage((@index / @grid-columns));
   }
-  .col@{class}-push-@{index} {
+  :global(.col@{class}-push-@{index}) {
     left: percentage((@index / @grid-columns));
   }
-  .col@{class}-pull-@{index} {
+  :global(.col@{class}-pull-@{index}) {
     right: percentage((@index / @grid-columns));
   }
-  .col@{class}-offset-@{index} {
+  :global(.col@{class}-offset-@{index}) {
     margin-left: percentage((@index / @grid-columns));
   }
-  .col@{class}-order-@{index} {
+  :global(.col@{class}-order-@{index}) {
     order: @index;
   }
   .loop-grid-columns((@index - 1), @class);
 }
 
 .loop-grid-columns(@index, @class) when (@index = 0) {
-  .col@{class}-@{index} {
+  :global(.col@{class}-@{index}) {
     display: none;
   }
-  .col-push-@{index} {
+  :global(.col-push-@{index}) {
     left: auto;
   }
-  .col-pull-@{index} {
+  :global(.col-pull-@{index}) {
     right: auto;
   }
-  .col@{class}-push-@{index} {
+  :global(.col@{class}-push-@{index}) {
     left: auto;
   }
-  .col@{class}-pull-@{index} {
+  :global(.col@{class}-pull-@{index}) {
     right: auto;
   }
-  .col@{class}-offset-@{index} {
+  :global(.col@{class}-offset-@{index}) {
     margin-left: 0;
   }
-  .col@{class}-order-@{index} {
+  :global(.col@{class}-order-@{index}) {
     order: 0;
   }
 }

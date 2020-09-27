@@ -1,5 +1,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
+import CSSModules from 'react-css-modules'
+
 import RowContext from './RowContext';
 
 import styles from './index.less';
@@ -49,7 +51,8 @@ export const Col = React.forwardRef<HTMLDivElement, ColProps>((props, ref) => {
     const { span, order, offset, pull, push, className, children, flex, style, ...others } = props;
 
     // TODO css前缀问题
-    const prefix = 'components-Grid-index__';
+    // const prefix = 'components-Grid-index__';
+    const prefix = '';
 
     let sizeClassObj = {};
     ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'].forEach(size => {
@@ -127,3 +130,6 @@ export const Col = React.forwardRef<HTMLDivElement, ColProps>((props, ref) => {
 });
 
 Col.displayName = 'Col';
+
+// export default CSSModules(Col, styles)
+export default Col;
