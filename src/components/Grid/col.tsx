@@ -1,10 +1,9 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import CSSModules from 'react-css-modules'
 
 import RowContext from './RowContext';
 
-import styles from './index.less';
+// import styles from './index.less';
 
 type ColSpanType = number | string;
 

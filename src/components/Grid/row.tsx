@@ -69,7 +69,7 @@ export const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
   }
 
   const renderRow = () => {
-    const { justify, align, className, style, center, children } = props;
+    const { justify, align, className, style, center, children, ...others } = props;
     const gutter = getGutter();
     const classes = classnames(styles.row, {
       [styles[`row-justify-${justify}`]]: justify,
@@ -86,8 +86,11 @@ export const Row = React.forwardRef<HTMLDivElement, RowProps>((props, ref) => {
         marginTop: gutter[1]! / -2,
         marginBottom: gutter[1]! / -2,
       } : {}),
-      ...style
-    }
+      ...style,
+    };
+
+    const otherProps = { ...others };
+    delete otherProps.gutter;
 
     return (
       <RowContext.Provider value={{ gutter }}>

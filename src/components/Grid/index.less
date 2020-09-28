@@ -3,6 +3,7 @@
 .row {
   display: flex;
   flex-flow: row wrap;
+  // flex-wrap: wrap;
 
   &::before,
   &::after {
@@ -40,10 +41,17 @@
   }
 }
 
+:global(.col) {
+  position: relative;
+  max-width: 100%;
+  min-height: 1px;
+}
+
 .loop-grid-columns(@index, @class) when (@index > 0) {
   :global(.col@{class}-@{index}) {
     display: block;
     flex: 0 0 percentage((@index / @grid-columns));
+    // flex: 1;
     max-width: percentage((@index / @grid-columns));
   }
   :global(.col@{class}-push-@{index}) {
@@ -91,49 +99,23 @@
 
 .make-grid();
 
-// Extra small grid
-//
-// Columns, offsets, pushes, and pulls for extra small devices like
-// smartphones.
-
 .make-grid(-xs);
-
-// Small grid
-//
-// Columns, offsets, pushes, and pulls for the small device range, from phones
-// to tablets.
 
 @media (min-width: @screen-sm-min) {
   .make-grid(-sm);
 }
 
-// Medium grid
-//
-// Columns, offsets, pushes, and pulls for the desktop device range.
-
 @media (min-width: @screen-md-min) {
   .make-grid(-md);
 }
-
-// Large grid
-//
-// Columns, offsets, pushes, and pulls for the large desktop device range.
 
 @media (min-width: @screen-lg-min) {
   .make-grid(-lg);
 }
 
-// Extra Large grid
-//
-// Columns, offsets, pushes, and pulls for the full hd device range.
-
 @media (min-width: @screen-xl-min) {
   .make-grid(-xl);
 }
-
-// Extra Extra Large grid
-//
-// Columns, offsets, pushes, and pulls for the full hd device range.
 
 @media (min-width: @screen-xxl-min) {
   .make-grid(-xxl);

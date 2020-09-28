@@ -1,0 +1,26 @@
+.linkContainer {
+  display: flex;
+  justify-content: space-between;
+
+  & + & {
+    margin-top: 12px;
+  }
+
+  // &::before {
+  //   content: '';
+  //   position: absolute;
+  //   width: 4px;
+  //   height: 4px;
+  //   border-radius: 50%;
+  //   background-color: #999;
+  //   margin: 8px 0 0 -11px;
+  // }
+
+  .link {
+    color: #527ed1;
+  }
+  .date {
+    color: #999;
+    flex-shrink: 0;
+  }
+}
