@@ -13,6 +13,10 @@ export const toolsList = [
   {
     url: 'https://tool.lu/imageholder/?tdsourcetag=s_pctim_aiomsg',
     urlTitle: '图片占位'
+  },
+  {
+    url: 'https://www.favicon-generator.org/',
+    urlTitle: 'favicon生成'
   }
 ];
 
