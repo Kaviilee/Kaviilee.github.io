@@ -3,6 +3,7 @@ import { Configuration } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 const WebpackBar = require('webpackbar');
+const { ESBuildPlugin } = require('esbuild-loader')
 
 import { createCSSRule } from './css/create-css-rule';
 
@@ -50,7 +51,12 @@ const webpackConfig: Configuration = {
       {
         // https://github.com/TypeStrong/ts-loader
         test: /\.(ts|tsx)$/,
-        loader: 'ts-loader',
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'tsx',
+          target: 'es2015'
+        }
+        // loader: 'ts-loader',
       },
 
       createCSSRule(/\.css$/),
@@ -118,6 +124,7 @@ const webpackConfig: Configuration = {
       ],
     }),
     new WebpackBar(),
+    new ESBuildPlugin(),
   ],
   optimization: {
     runtimeChunk: 'single',

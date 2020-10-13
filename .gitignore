@@ -7,3 +7,4 @@ tsDist
 cache
 .cache
 coverage
+yarn-error.log
