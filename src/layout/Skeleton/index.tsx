@@ -26,11 +26,6 @@ const links = [
   },
 ];
 
-const isPhone = () => {
-  const result = window.matchMedia("(max-width: 768px)");
-  return result.matches;
-}
-
 export const Skeleton: FC<SkeletonProps> = ({ children, userInfo }) => {
   const [collapsed, setCollapsed] = useState<boolean>(true);
   const toggleCollapsed = () => {

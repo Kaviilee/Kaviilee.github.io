@@ -9,7 +9,7 @@ install:
   - npm install # npm ci
 script:
   - npm run build # npm run build
-  - commitlint-travis
+  # - commitlint-travis
 
 # 部署信息
 deploy:
