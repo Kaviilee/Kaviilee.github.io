@@ -15,12 +15,19 @@ interface HeaderProps {
   toggleCollapsed?: () => void;
 }
 
+const isPhone = () => {
+  const result = window.matchMedia("(max-width: 768px)");
+  return result.matches;
+}
+
 export const Header: FC<HeaderProps> = React.memo(
   ({ collapsed = true, links = [], toggleCollapsed }) => (
     <header className={styles.header}>
-      <span className={styles.headerTrigger} onClick={toggleCollapsed}>
-        {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
-      </span>
+      {isPhone() ? <div></div> :
+        <span className={styles.headerTrigger} onClick={toggleCollapsed}>
+          {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
+        </span>
+      }
       <ul className={styles.links}>
         {links.map((item, idx) => {
           const aProps = {

@@ -1,8 +1,41 @@
+@import '@/styles/default';
+
 .container {
   display: grid;
   height: 100%;
   gap: 16px;
-  grid-template-columns: repeat(2, 1fr);
+  overflow-y: auto;
+  // grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: @screen-xs-min) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: @screen-sm-min) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: @screen-md-min) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: @screen-lg-min) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: @screen-xl-min) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: @screen-xxl-min) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .column {

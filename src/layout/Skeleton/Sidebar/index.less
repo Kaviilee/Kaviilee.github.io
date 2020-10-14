@@ -1,4 +1,5 @@
 @import '../../../styles/color.less';
+@import '@/styles/default.less';
 
 @sidebar-width: 208px;
 
@@ -7,7 +8,8 @@
 @avatar-size-m: 80px;
 
 .sidebar {
-  width: @sidebar-width;
+  // width: @sidebar-width;
+  display: none;
   // border-right: 1px solid @border-color;
   background-color: #fff;
   transition: all 0.2s;
@@ -34,6 +36,42 @@
   margin-top: 8px;
   font-size: 18px;
   font-weight: bold;
+}
+
+@media (min-width: @screen-xs-min) {
+  :global(.sidebar) {
+    width: @sidebar-width;
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  :global(.sidebar) {
+    width: @sidebar-width;
+  }
+}
+@media (min-width: @screen-md-min) {
+  .sidebar {
+    width: @sidebar-width;
+    display: block;
+  }
+}
+@media (min-width: @screen-lg-min) {
+  .sidebar {
+    width: @sidebar-width;
+    display: block;
+  }
+}
+@media (min-width: @screen-xl-min) {
+  .sidebar {
+    width: @sidebar-width;
+    display: block;
+  }
+}
+@media (min-width: @screen-xxl-min) {
+  .sidebar {
+    width: @sidebar-width;
+    display: block;
+  }
 }
 
 :global(.collapsed) {

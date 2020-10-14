@@ -8,14 +8,7 @@
     "build": "cross-env NODE_ENV=production ts-node ./build/webpack/build.ts",
     "lint:ts": "eslint \"{config,build,src,tools}/**/*.ts{,x}\"",
     "tsc": "tsc",
-    "cz": "npx git-cz",
     "test:prod": "ts-node ./server.ts"
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && npx git-cz --hook || true",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "repository": {
     "type": "git",
@@ -26,9 +19,6 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@commitlint/travis-cli": "^8.3.5",
     "@types/case-sensitive-paths-webpack-plugin": "^2.1.4",
     "@types/classnames": "^2.2.9",
     "@types/copy-webpack-plugin": "^6.0.0",
@@ -57,7 +47,6 @@
     "case-sensitive-paths-webpack-plugin": "^2.3.0",
     "chalk": "^4.0.0",
     "clean-webpack-plugin": "^3.0.0",
-    "commitizen": "^4.1.2",
     "copy-webpack-plugin": "^6.0.2",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.2",
@@ -75,7 +64,6 @@
     "file-loader": "^6.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^4.2.0",
-    "husky": "^4.2.5",
     "less-loader": "^6.2.0",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
@@ -107,6 +95,7 @@
     "mobx": "^5.15.4",
     "mobx-react": "^6.2.2",
     "query-string": "^6.13.1",
+    "rc-drawer": "^4.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-flexbox-grid": "^2.1.2",

@@ -1,7 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
 import { observer } from 'mobx-react';
 
-import siteConf from 'Config/site';
 
 import { Header } from './Header';
 import { Sidebar, UserInfoProps } from './Sidebar';
@@ -26,6 +25,11 @@ const links = [
     isBlank: true
   },
 ];
+
+const isPhone = () => {
+  const result = window.matchMedia("(max-width: 768px)");
+  return result.matches;
+}
 
 export const Skeleton: FC<SkeletonProps> = ({ children, userInfo }) => {
   const [collapsed, setCollapsed] = useState<boolean>(true);
