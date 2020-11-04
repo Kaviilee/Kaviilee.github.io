@@ -20,6 +20,7 @@ npm run lint:ts
 
 # 编译 typescipt 为 js
 npm run tsc                                                           |
+```
 
 ## 分支
 
