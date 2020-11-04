@@ -1,6 +1,7 @@
 import React from 'react';
 import Skeleton from '@/layout/Skeleton';
 import Introduction from '@/layout/Introduction';
+import Message from '@/pages/UI/Message';
 import {
   StockOutlined,
   LayoutOutlined,
@@ -60,6 +61,12 @@ export const routes: RouteConfig[] = [
             path: '/ui/button',
             disabled: true,
           },
+          {
+            name: 'Message',
+            path: '/ui/message',
+            disabled: false,
+            component: Message
+          }
         ],
       },
       {

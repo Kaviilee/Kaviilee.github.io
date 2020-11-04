@@ -18,3 +18,5 @@ export const Card: FC<CardProps> = ({ title, style, bodyStyle, className, border
 
 
 Card.displayName = 'Card';
+
+export default Card;

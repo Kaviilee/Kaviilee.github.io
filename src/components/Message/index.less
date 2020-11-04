@@ -1,0 +1,79 @@
+@import '@/styles/color';
+@import '@/styles/mixins';
+
+@primary:       @blue;
+@secondary:     @gray-600;
+@success:       @green;
+@info:          @cyan;
+@warning:       @yellow;
+@danger:        @red;
+@light:         @gray-100;
+@dark:          @gray-800;
+
+@message-shadow: 0 0 4px rgba(0,0,0,0.15);
+@shadow-2: 0 3px 6px -4px rgba(0, 0, 0, 0.28), 0 6px 16px 0 rgba(0, 0, 0, 0.12),
+  0 9px 28px 3px rgba(0, 0, 0, 0.12);
+@message-margin-y: 0.75rem;
+@message-padding: 10px 16px;
+
+.messageContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1051;
+
+  &,
+  .message {
+    text-align: center;
+    margin: @message-margin-y 0;
+
+    .messageContent {
+      display: inline-flex;
+      background: @white;
+      box-shadow: @shadow-2;
+      padding: @message-padding;
+      border-radius: 2px;
+
+      .icon {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .item-enter {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  .item-enter-active {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 300ms, transform 300ms;
+  }
+  .item-exit {
+      opacity: 1;
+  }
+  .item-exit-active {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 300ms, transform 300ms;
+  }
+}
+
+@theme-colors: {
+  primary:    @primary;
+  secondary:  @secondary;
+  success:    @success;
+  info:       @primary;
+  warning:    @warning;
+  danger:     @danger;
+  error:      @danger;
+  light:      @light;
+  dark:       @dark
+}
+
+each(@theme-colors, {
+    :global(.icon-@{key}) {
+        color: @value
+    }
+})
