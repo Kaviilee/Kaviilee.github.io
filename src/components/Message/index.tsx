@@ -2,11 +2,9 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import Message from './message';
-import { MessageType } from './index.d';
+import { MessageType, MessageApi } from './index.d';
 
 import styles from './index.less'
-
-type MessageApi = Partial<Record<MessageType, (text: string) => void>>
 
 // type AnimationName = 'zoom-in-top' | 'zoom-in-left' | 'zoom-in-bottom' | 'zoom-in-right' | 'slide-in-top'
 

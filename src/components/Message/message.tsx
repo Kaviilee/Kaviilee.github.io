@@ -1,6 +1,5 @@
 import React from 'react';
-import Icon, { InfoCircleOutlined, CloseCircleOutlined, CheckCircleOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
-import classNames from 'classnames';
+import { InfoCircleOutlined, CloseCircleOutlined, CheckCircleOutlined, ExclamationCircleOutlined } from '@ant-design/icons';
 
 import styles from './index.less'
 

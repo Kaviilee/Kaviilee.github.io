@@ -13,6 +13,7 @@ export interface BaseButtonProps {
 
   children: ReactNode;
   href?: string;
+  block?: boolean;
 }
 
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>;

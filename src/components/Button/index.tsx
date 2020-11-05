@@ -7,14 +7,15 @@ import { ButtonProps } from './index.d'
 
 const Button: React.FC<ButtonProps> = props => {
 
-  const { className, disabled, icon, size, btnType, children, href, ...restProps } = props;
+  const { className, disabled, icon, size, btnType, children, href, block, ...restProps } = props;
 
   let s = size?.toLowerCase().replace(/^\S/, (L) => L.toUpperCase())
   let b = btnType?.toLowerCase().replace(/^\S/, (L) => L.toUpperCase())
   const classes = classNames(styles.btn, className, {
     [`${styles[`btn${s}`]}`]: s,
     [`${styles[`btn${b}`]}`]: b,
-    'disabled': (btnType === 'link') && disabled
+    'disabled': (btnType === 'link') && disabled,
+    [styles.block]: block
   })
 
 

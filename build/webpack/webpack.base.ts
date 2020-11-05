@@ -3,7 +3,7 @@ import { Configuration } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 const WebpackBar = require('webpackbar');
-const { ESBuildPlugin } = require('esbuild-loader')
+const { ESBuildPlugin } = require('esbuild-loader');
 
 import { createCSSRule } from './css/create-css-rule';
 

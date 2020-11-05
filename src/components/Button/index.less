@@ -114,6 +114,11 @@
   .button-style(@white, @gray-400, @gray-900, @white, @primary, @primary);
 }
 
+.btn-dashed {
+  border: 1px dashed;
+  .button-style(@white, @gray-400, @gray-900, @white, @primary, @primary);
+}
+
 .btn-link {
   font-weight: 400;
   color: @link-color;
@@ -137,4 +142,8 @@
     pointer-events: none;
     color: @gray-600;
   }
+}
+
+.block {
+  width: 100%;
 }
