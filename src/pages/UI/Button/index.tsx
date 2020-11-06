@@ -1,9 +1,6 @@
 import React from 'react';
-import { Card, Button } from 'Components/index';
-import { CodeBlock } from 'Components/CodeBlock';
-import ReactMarkdown from 'react-markdown';
-import gfm from 'remark-gfm';
-import {doc, propsDescription} from './doc'
+import { Card, Button, MarkDown } from 'Components/index';
+import docMd from './doc.md';
 
 import styles from './index.less'
 
@@ -22,12 +19,8 @@ const ButtonDisplay: React.FC = () => {
         <Button btnType="default" block>Block</Button>
       </section>
 
-      <div>
-        <ReactMarkdown plugins={[gfm]}>{propsDescription}</ReactMarkdown>
-      </div>
-
       <div className={styles.codeContent}>
-        <CodeBlock markdown={doc}></CodeBlock>
+        <MarkDown markdown={docMd}></MarkDown>
       </div>
     </Card>
   )

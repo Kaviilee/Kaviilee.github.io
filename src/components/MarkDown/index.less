@@ -1,0 +1,23 @@
+.codeMarkup {
+  position: relative;
+  border-top: 2em solid rgba(230, 230, 230, 0.7);
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 0.1em 0.5em 0 rgba(0, 0, 0, 0.28);
+
+  pre {
+    margin: 0 0 0.2em 0!important;
+  }
+
+  &::before {
+    position: absolute;
+    top: -1.25em;
+    left: 1em;
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: #f44;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
+    content: '';
+  }
+}

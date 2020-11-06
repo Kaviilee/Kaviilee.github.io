@@ -6,14 +6,12 @@ export type ButtonType = 'default' | 'primary' | 'dashed' | 'danger' | 'link';
 export interface BaseButtonProps {
   className?: string;
   disabled?: boolean;
-  icon?: string;
 
   size?: ButtonSize;
   btnType?: ButtonType;
 
-  children: ReactNode;
   href?: string;
-  block?: boolean;
+  block?: boolean
 }
 
 type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>;

@@ -100,6 +100,12 @@ const webpackConfig: Configuration = {
           options: genUrlLoaderOptions('fonts'),
         },
       },
+
+      // markdown
+      {
+        test: /\.md$/,
+        loader: 'raw-loader'
+      }
     ],
   },
   plugins: [

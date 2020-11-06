@@ -1,8 +1,7 @@
 import React from 'react';
-import { message, Card, Button } from 'Components/index';
+import { message, Card, Button, MarkDown, Tag } from 'Components/index';
 import styles from './index.less';
-import { CodeBlock } from 'Components/CodeBlock'
-import {doc} from './doc'
+import docMd from './doc.md'
 
 const MessageDisplay: React.FC = () => {
   const info = () => {
@@ -29,9 +28,10 @@ const MessageDisplay: React.FC = () => {
       <Button className={styles.buttonBetween} onClick={error}>Error</Button>
       <Button className={styles.buttonBetween} btnType="default" onClick={success}>Success</Button>
       <Button className={styles.buttonBetween} btnType="default" onClick={warn}>Warn</Button>
+      {/* <Tag>test</Tag> */}
 
       <div className={styles.codeContent}>
-        <CodeBlock markdown={doc}></CodeBlock>
+        <MarkDown markdown={docMd}></MarkDown>
       </div>
     </Card>
   )

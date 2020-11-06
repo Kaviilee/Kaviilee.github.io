@@ -1,4 +1,5 @@
-import React, { Children } from 'react';
+import React from 'react';
+
 import classNames from 'classnames'
 
 import styles from './index.less'
@@ -7,7 +8,7 @@ import { ButtonProps } from './index.d'
 
 const Button: React.FC<ButtonProps> = props => {
 
-  const { className, disabled, icon, size, btnType, children, href, block, ...restProps } = props;
+  const { className, disabled, size, btnType, children, href, block, ...restProps } = props;
 
   let s = size?.toLowerCase().replace(/^\S/, (L) => L.toUpperCase())
   let b = btnType?.toLowerCase().replace(/^\S/, (L) => L.toUpperCase())
@@ -22,7 +23,7 @@ const Button: React.FC<ButtonProps> = props => {
   if (btnType === 'link' && href) {
     return (
       <a className={classes} href={href} {...restProps}>
-        {children}
+        <span>{children}</span>
       </a>
     )
   } else {
@@ -32,7 +33,9 @@ const Button: React.FC<ButtonProps> = props => {
         disabled={disabled}
         {...restProps}
       >
-        <span>{children}</span>
+        <span>
+          {children}
+        </span>
       </button>
     )
   }

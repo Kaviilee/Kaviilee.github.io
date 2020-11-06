@@ -22,12 +22,11 @@ const getUuid = (): string => {
     return `MESSAGE_${now}_${id}`
 }
 
-let add: (notice: Notice) => void
+let add: (notice: Notice, duration?: number) => void
 
 
 export const MessageContainer = () => {
     const [notices, setNotices] = useState<Notice[]>([]);
-    const duration = 3000;
     const max = 10;
     const remove = (notice: Notice) => {
         const {key} = notice;
@@ -37,12 +36,14 @@ export const MessageContainer = () => {
         })
     }
 
-    add = (notice: Notice) => {
+    add = (notice: Notice, duration?: number) => {
         setNotices((prevNotices) => [...prevNotices, notice]);
+
+        let timer = (duration && duration * 1000) || 3000;
 
         setTimeout(() => {
             remove(notice)
-        }, duration);
+        }, timer);
     }
 
     useEffect(() => {
@@ -86,34 +87,34 @@ ReactDOM.render(
 )
 
 const api: MessageApi = {
-    info: (text) => {
+    info: (text, duration) => {
         // console.log(text)
         add({
             text,
             key: getUuid(),
             type: 'info'
-        })
+        }, duration)
     },
-    success: (text) => {
+    success: (text, duration) => {
       add({
         text,
         key: getUuid(),
         type: 'success'
-      })
+      }, duration)
     },
-    warn: (text) => {
+    warn: (text, duration) => {
       add({
         text,
         key: getUuid(),
         type: 'warn'
-      })
+      }, duration)
     },
-    error: (text) => {
+    error: (text, duration) => {
       add({
         text,
         key: getUuid(),
         type: 'error'
-      })
+      }, duration)
     }
 }
 
