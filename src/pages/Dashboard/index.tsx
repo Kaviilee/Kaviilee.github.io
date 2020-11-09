@@ -2,9 +2,8 @@ import React from 'react';
 
 import Empty from 'Components/Empty';
 import { Card } from 'Components/Card';
-import { Row, Col } from 'react-flexbox-grid';
-import { CustomLinks, LinkItem } from './components/CustomLinks';
 import { fetchRSS, recommendList, toolsList } from 'Config/site/dashboard';
+import { CustomLinks, LinkItem } from './components/CustomLinks';
 
 import styles from './index.less'
 

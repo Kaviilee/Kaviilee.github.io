@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import Skeleton from '@/layout/Skeleton';
 import Introduction from '@/layout/Introduction';
 import Message from '@/pages/UI/Message';

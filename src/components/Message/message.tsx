@@ -5,7 +5,7 @@ import styles from './index.less'
 
 import { MessageProps, MessageType } from './index.d'
 
-const Message: React.FC<MessageProps> = ({ text, type }) => {
+function Message ({ text, type }: MessageProps) {
   // render Icon
   const renderIcon = (messageType: MessageType) => {
     let messageIcon: React.ElementType

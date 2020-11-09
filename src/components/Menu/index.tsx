@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import { SubMenu } from './SubMenu';
 import { MenuItem } from './MenuItem';
 
-import { MenuProps, MenuConfigContainerProps, MenuItemType } from './index.d';
+import { MenuConfigContainerProps, MenuItemType } from './index.d';
 
 import styles from './index.less';
 
@@ -24,10 +24,16 @@ const getCurrentPath = (path: string | LinkProps['to']) => {
   }
 };
 
+interface MenuProps {
+  collapsed: boolean;
+  children?: React.ReactNode;
+}
+
 /**
  * 菜单
  */
-export const Menu: FC<MenuProps> = ({ children, collapsed }) => {
+export function Menu (props: MenuProps) {
+  const { collapsed, children } = props;
   return (
     <nav className={classnames({ [styles.collapsed]: collapsed })}>
       <ul>{children}</ul>
@@ -38,7 +44,7 @@ export const Menu: FC<MenuProps> = ({ children, collapsed }) => {
 /**
  * 配置式菜单
  */
-export const MenuConfigContainer: FC<MenuConfigContainerProps> = (props) => {
+export function MenuConfigContainer(props: MenuConfigContainerProps) {
   const {
     menuData,
     collapsed = false,
@@ -67,14 +73,14 @@ export const MenuConfigContainer: FC<MenuConfigContainerProps> = (props) => {
   /**
    * 渲染菜单数据
    */
-  function renderMenuData(menuData: MenuItemType[], level: number) {
-    return menuData.map((data, idx) => {
+  function renderMenuData(menuDatas: MenuItemType[], level: number) {
+    return menuDatas.map((data, idx) => {
       const key = data.key || idx;
 
       if (data.type === 'submenu') {
         const paths = data.items.map(item => item.path)
         const [ selectedKey ] = selectedKeys
-        let flag = paths.some(p => p === selectedKey)
+        const flag = paths.some(p => p === selectedKey)
         return (
           <SubMenu
             active={flag}

@@ -7,14 +7,10 @@ import styles from './index.less'
 export interface TagProps {
   closable?: boolean;
   onClose?: (e: React.MouseEvent) => void;
+  children: React.ReactChild;
 }
 
-export const Tag: React.FC<TagProps> = props => {
-  const {
-    closable,
-    onClose,
-    children
-  } = props
+export const Tag: React.FC<TagProps> = ({ closable, onClose, children }: TagProps) => {
 
   const [tagShow, setTagShow] = useState(true);
 

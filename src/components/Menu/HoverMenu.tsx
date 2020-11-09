@@ -10,10 +10,10 @@ import styles from './index.less'
 import { MenuItemType } from './index.d'
 
 interface Items {
-  items: MenuItemType[]
+  items: MenuItemType[];
 }
 
-export const HoverMenu: FC<Items> = ({ items }) => {
+export const HoverMenu: FC<Items> = ({ items }: Items) => {
   const router = useRouter()
   const itemElements = items.map((item) => {
     const { label, disabled, disabledTips, path } = item
@@ -26,7 +26,7 @@ export const HoverMenu: FC<Items> = ({ items }) => {
         key={item.key}
         title={disabled ? disabledTips : ''}
       >
-        <Link to={path ? path : ''}>
+        <Link to={path || ''}>
           <span>{label}</span>
         </Link>
       </li>

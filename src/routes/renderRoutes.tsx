@@ -18,7 +18,7 @@ export function renderRoutes(
           strict={route.strict}
           render={(props) => {
             if (route.render) {
-              return route.render({ ...props, ...extraProps, route: route });
+              return route.render({ ...props, ...extraProps, route });
             }
 
             if (route.component) {

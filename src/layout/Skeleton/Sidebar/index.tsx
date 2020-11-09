@@ -1,7 +1,7 @@
 
 import React, { FC, memo } from 'react';
 import classnames from 'classnames';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 
 import { Nav } from '../Nav';
 import styles from './index.less';
@@ -9,7 +9,7 @@ import styles from './index.less';
 interface UserInfoAreaProps {
   avatar?: string;
   name?: string;
-  path?: string
+  path?: string;
 }
 
 export interface UserInfoProps {
@@ -24,7 +24,7 @@ export interface SidebarProps {
 }
 
 const UserInfoArea: FC<UserInfoAreaProps> = memo(
-  ({ avatar, name = '', path }) => {
+  ({ avatar, name = '', path }: UserInfoAreaProps) => {
     const history = useHistory();
 
     return (
@@ -46,7 +46,7 @@ const UserInfoArea: FC<UserInfoAreaProps> = memo(
 export const Sidebar: React.FC<SidebarProps> = ({
   collapsed = true,
   userInfo,
-}) => {
+}: SidebarProps) => {
   return (
     <aside className={classnames(styles.sidebar, { collapsed })}>
       <UserInfoArea avatar={userInfo?.avatar_url} name={userInfo?.name} path="/" />

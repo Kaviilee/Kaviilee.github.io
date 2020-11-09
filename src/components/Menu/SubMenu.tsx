@@ -20,7 +20,7 @@ export const SubMenu: FC<SubmenuProps> = ({
   children,
   style,
   items
-}) => {
+}: SubmenuProps) => {
   return (
     <li className={styles.subMenu}>
       <div

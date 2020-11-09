@@ -26,7 +26,7 @@ const links = [
   },
 ];
 
-export const Skeleton: FC<SkeletonProps> = ({ children, userInfo }) => {
+export function Skeleton ({ children, userInfo }: SkeletonProps) {
   const [collapsed, setCollapsed] = useState<boolean>(true);
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);

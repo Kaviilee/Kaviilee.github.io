@@ -4,7 +4,7 @@ export type ThemeType = 'primary' | 'secondary' | 'success' | 'info' | 'error' |
 
 export interface MessageProps {
   text: string;
-  type: MessageType
+  type: MessageType;
 }
 
 type MessageApi = Record<MessageType, (text: string, duration?: number) => void>

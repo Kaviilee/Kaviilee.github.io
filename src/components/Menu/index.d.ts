@@ -40,6 +40,7 @@ export interface SubmenuProps extends MenuDataSubmenuItemProps {
 
 export interface MenuProps {
   collapsed?: boolean;
+  chilren?: React.ReactNode;
 }
 
 export interface MenuConfigContainerProps extends MenuProps {

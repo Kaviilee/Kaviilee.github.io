@@ -12,7 +12,7 @@ export interface NavProps {
 /**
  * 侧边栏导航
  */
-export const Nav: FC<NavProps> = ({ collapsed = false }) => {
+export const Nav: FC<NavProps> = ({ collapsed = false }: NavProps) => {
   const router = useRouter();
   const [selectedKeys, setSelectedKeys] = useState<string[]>([]);
 

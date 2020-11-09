@@ -9,7 +9,7 @@ import styles from './index.less'
 /**
  * 菜单项
  */
-export const MenuItem: FC<MenuItemProps> = ({
+export function MenuItem ({
   active,
   path,
   icon: Icon,
@@ -19,7 +19,7 @@ export const MenuItem: FC<MenuItemProps> = ({
   disabledTips,
   style,
   level
-}) => {
+}: MenuItemProps) {
   return (
     <li
       className={classnames(styles.menuItem, className, {

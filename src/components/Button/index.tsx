@@ -6,7 +6,7 @@ import styles from './index.less'
 
 import { ButtonProps } from './index.d'
 
-const Button: React.FC<ButtonProps> = props => {
+function Button (props: ButtonProps) {
 
   const { className, disabled, size, btnType, children, href, block, ...restProps } = props;
 
@@ -26,7 +26,7 @@ const Button: React.FC<ButtonProps> = props => {
         <span>{children}</span>
       </a>
     )
-  } else {
+  }
     return (
       <button
         className={classes}
@@ -38,7 +38,7 @@ const Button: React.FC<ButtonProps> = props => {
         </span>
       </button>
     )
-  }
+
 
 }
 

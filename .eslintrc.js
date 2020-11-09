@@ -53,6 +53,7 @@ module.exports = {
     ],
     'react/display-name': 'off',
     'class-methods-use-this': 'off',
+    'no-var-requires': 'off'
   },
   overrides: [
     {

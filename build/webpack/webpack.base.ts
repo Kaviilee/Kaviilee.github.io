@@ -2,12 +2,13 @@ import path from 'path';
 import { Configuration } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-const WebpackBar = require('webpackbar');
-const { ESBuildPlugin } = require('esbuild-loader');
 
 import { createCSSRule } from './css/create-css-rule';
 
 import config from '../../config/webpack/base';
+
+const WebpackBar = require('webpackbar');
+const { ESBuildPlugin } = require('esbuild-loader');
 
 /**
  * 生成相对资源目录的路径

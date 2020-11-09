@@ -21,7 +21,7 @@ const isPhone = () => {
 }
 
 export const Header: FC<HeaderProps> = React.memo(
-  ({ collapsed = true, links = [], toggleCollapsed }) => (
+  ({ collapsed = true, links = [], toggleCollapsed }: HeaderProps) => (
     <header className={styles.header}>
       {isPhone() ? <div></div> :
         <span className={styles.headerTrigger} onClick={toggleCollapsed}>

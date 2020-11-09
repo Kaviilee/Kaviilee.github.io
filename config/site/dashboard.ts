@@ -1,5 +1,5 @@
-import config from './index'
 import Parser from 'rss-parser';
+import config from './index';
 
 export const toolsList = [
   {

@@ -39,7 +39,7 @@ export const MessageContainer = () => {
     add = (notice: Notice, duration?: number) => {
         setNotices((prevNotices) => [...prevNotices, notice]);
 
-        let timer = (duration && duration * 1000) || 3000;
+        const timer = (duration && duration * 1000) || 3000;
 
         setTimeout(() => {
             remove(notice)
@@ -47,7 +47,6 @@ export const MessageContainer = () => {
     }
 
     useEffect(() => {
-        console.log(notices)
         if (notices.length > max) {
             const [first] = notices;
             remove(first)
