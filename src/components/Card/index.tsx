@@ -9,18 +9,28 @@ export interface CardProps {
   bordered?: boolean;
   style?: React.CSSProperties;
   bodyStyle?: React.CSSProperties;
+  hoverable?: boolean;
   children?: React.ReactNode;
 }
 
-export function Card ({ title, style, bodyStyle, className, bordered, children }: CardProps){
+export function Card ({ title, style, bodyStyle, className, bordered, hoverable, children }: CardProps){
   return (
     <section className={classnames(styles.card, className, {
-      [styles.bordered]: bordered !== false
+      [styles.bordered]: bordered,
+      [styles.hoverable]: hoverable
     })} style={style}>
-      <header className={classnames(styles.cardHeader, styles.title)}>
-        { title }
-      </header>
-      <main className={styles.content} style={bodyStyle}>{ children }</main>
+      {
+        title ?
+          <section className={classnames(styles.cardHeader)}>
+            <header className={classnames(styles.title)}>
+              { title }
+            </header>
+          </section>
+          : null
+      }
+      <section className={styles.content} style={bodyStyle}>
+        <main>{ children }</main>
+      </section>
     </section>
   )
 }

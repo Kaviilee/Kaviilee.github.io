@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { LinkProps } from 'react-router-dom';
 import classnames from 'classnames';
 

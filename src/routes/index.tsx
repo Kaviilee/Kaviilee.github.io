@@ -3,6 +3,7 @@ import Skeleton from '@/layout/Skeleton';
 import Introduction from '@/layout/Introduction';
 import Message from '@/pages/UI/Message';
 import Button from '@/pages/UI/Button';
+import Card from '@/pages/UI/Card'
 import {
   StockOutlined,
   LayoutOutlined,
@@ -62,6 +63,11 @@ export const routes: RouteConfig[] = [
             path: '/ui/button',
             disabled: false,
             component: Button
+          },
+          {
+            name: 'Card',
+            path: '/ui/card',
+            component: Card
           },
           {
             name: 'Message',

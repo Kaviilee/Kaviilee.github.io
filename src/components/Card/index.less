@@ -1,14 +1,16 @@
 .card {
-  padding: 24px;
   background-color: #fff;
   border-radius: 2px;
 
   &Header {
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
+    padding: 0 24px;
+    border-bottom: 1px solid #e8e8e8;
   }
 
 
   .title {
+    padding: 16px 0;
     position: relative;
     font-size: 16px;
     font-weight: bold;
@@ -16,6 +18,16 @@
 
   .content {
     position: relative;
+    padding: 24px;
+  }
+
+
+}
+.hoverable {
+  cursor: pointer;
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.09);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
   }
 }
 .bordered {
