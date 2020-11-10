@@ -16,7 +16,7 @@ export interface MarkDownProps {
   showLineNumbers?: boolean;
 }
 
-export const MarkDown: React.FC<MarkDownProps> = ({ markdown, showLineNumbers }: MarkDownProps) => {
+export function MarkDown({ markdown, showLineNumbers }: MarkDownProps) {
 
   const renderHighlight = ({ value, language }: HightLightProps) => {
     return (
