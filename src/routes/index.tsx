@@ -3,7 +3,8 @@ import Skeleton from '@/layout/Skeleton';
 import Introduction from '@/layout/Introduction';
 import Message from '@/pages/UI/Message';
 import Button from '@/pages/UI/Button';
-import Card from '@/pages/UI/Card'
+import Card from '@/pages/UI/Card';
+import Preview from '@/pages/Preview'
 import {
   StockOutlined,
   LayoutOutlined,
@@ -37,20 +38,22 @@ export const routes: RouteConfig[] = [
         icon: StockOutlined,
       },
       {
-        path: '/layout',
+        path: '/preview',
         name: '布局',
         icon: LayoutOutlined,
         routes: [
           {
-            path: '/layout/1',
-            name: '圣杯布局',
-            disabled: false,
-          },
-          {
-            path: '/layout/flex',
+            path: '/preview/flexbox',
             name: 'Flexbox',
+            meta: { path: 'https://kaviilee.github.io/blog/' },
             disabled: false,
+            component: Preview,
           },
+          // {
+          //   path: '/layout/flex',
+          //   name: 'Flexbox',
+          //   disabled: false,
+          // },
         ],
       },
       {
