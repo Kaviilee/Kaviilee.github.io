@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import express from 'express';
 import { green, red } from 'chalk';
-import config from './build/webpack/webpack.prod';
 import { exec } from 'child_process';
+import config from './build/webpack/webpack.prod';
 
 const PORT = 8001;
 

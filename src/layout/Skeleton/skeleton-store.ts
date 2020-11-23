@@ -1,5 +1,5 @@
 import { observable, action } from 'mobx';
-import { GITHUB_USER_INFO_KEY } from '@/constant/store-key';
+import { GITHUB_USER_INFO_KEY } from 'Config/constant';
 import siteConfig from 'Config/site';
 
 export interface GithubUserInfo {
