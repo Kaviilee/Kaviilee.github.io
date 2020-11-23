@@ -33,7 +33,7 @@ const baseConfig: CustomConfig = {
 
   favicon: '',
 
-  banner: 'Copyright (c) 2020-present anran758',
+  banner: 'Copyright (c) 2020-present kaviilee',
 
   // cdn 配置
   // cdn: {

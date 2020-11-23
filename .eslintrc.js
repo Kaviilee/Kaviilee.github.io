@@ -38,6 +38,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-namespace': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       {
@@ -53,7 +54,6 @@ module.exports = {
     ],
     'react/display-name': 'off',
     'class-methods-use-this': 'off',
-    'no-var-requires': 'off'
   },
   overrides: [
     {
