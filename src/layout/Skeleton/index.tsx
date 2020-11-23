@@ -16,7 +16,7 @@ interface SkeletonProps {
 const links = [
   {
     href: 'https://kaviilee.github.io/blog',
-    label: '博客',
+    label: 'Blog',
     isBlank: true
   },
   {
