@@ -39,13 +39,13 @@ export const routes: RouteConfig[] = [
       },
       {
         path: '/preview',
-        name: '布局',
+        name: 'Demos',
         icon: LayoutOutlined,
         routes: [
           {
             path: '/preview/flexbox',
             name: 'Flexbox',
-            meta: { path: 'https://kaviilee.github.io/blog/' },
+            meta: { path: 'https://kaviilee.github.io/demos/flexbox' },
             disabled: false,
             component: Preview,
           },
