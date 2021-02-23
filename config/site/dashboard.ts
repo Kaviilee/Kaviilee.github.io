@@ -17,6 +17,10 @@ export const toolsList = [
   {
     url: 'https://www.favicon-generator.org/',
     urlTitle: 'favicon生成'
+  },
+  {
+    url: 'https://github.com/conwnet/github1s',
+    urlTitle: 'github1s | One second to read GitHub code with VS Code.'
   }
 ];
 
