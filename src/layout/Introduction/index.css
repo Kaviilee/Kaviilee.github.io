@@ -6,9 +6,9 @@
   letter-spacing: 0.1em;
   text-align: center;
   background-color: #13316d;
+  background-position: 50% 50%;
   background-size: 100% auto;
   background-attachment: fixed;
-  background-position: 50% 50%;
 }
 
 @media screen and (min-width: 769px) {
@@ -21,8 +21,8 @@
 
 .container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 
@@ -35,16 +35,16 @@
 }
 
 .desc {
-  font-size: 0.8em;
   color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8em;
 }
 
 .nav {
   display: flex;
-  font-size: 1.2em;
-  line-height: 1;
   margin-top: 16px;
   color: #40a9ff;
+  font-size: 1.2em;
+  line-height: 1;
 }
 
 .navItem {

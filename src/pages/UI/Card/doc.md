@@ -11,11 +11,15 @@
 
 ```jsx
 <section className={styles.cardDisplay}>
-  <Card style={{ color: 'red' }} className="card-demo" bodyStyle={{ borderTop: '1px solid #fefefe' }} hoverable>
+  <Card
+    style={{ color: 'red' }}
+    className="card-demo"
+    bodyStyle={{ borderTop: '1px solid #fefefe' }}
+    hoverable
+  >
     Demo1 without title
   </Card>
 
   <Card title="Demo2" bordered={true}></Card>
 </section>
 ```
-

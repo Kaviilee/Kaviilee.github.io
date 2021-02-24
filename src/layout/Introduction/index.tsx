@@ -27,8 +27,8 @@ const links: LinkProps[] = [
   },
   {
     name: 'QQ',
-    href: 'tencent://message/?uin=756281971&Menu=yes'
-  }
+    href: 'tencent://message/?uin=756281971&Menu=yes',
+  },
 ];
 
 export const Introduction = () => {
@@ -54,15 +54,10 @@ export const Introduction = () => {
                 {name}
               </Link>
             ) : (
-              <a
-                key={name}
-                className={styles.navItem}
-                href={href}
-                {...restProps}
-              >
+              <a key={name} className={styles.navItem} href={href} {...restProps}>
                 {name}
               </a>
-            )
+            ),
           )}
         </nav>
       </section>

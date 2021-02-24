@@ -2,13 +2,29 @@
   "name": "kaviilee.github.io",
   "version": "1.0.0",
   "description": "home page",
-  "keywords": ["blog", "react"],
+  "keywords": [
+    "blog",
+    "react"
+  ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack/webpack.dev.ts",
     "build": "cross-env NODE_ENV=production ts-node ./build/webpack/build.ts",
     "lint:ts": "eslint \"{config,build,src,tools}/**/*.ts{,x}\"",
+    "prettier": "prettier -c --write \"src/**/*\"",
+    "lint-staged": "lint-staged",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src && npm run lint:style",
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "lint:prettier": "prettier --check \"src/**/*\" --end-of-line auto",
     "tsc": "tsc",
     "test:prod": "ts-node ./server.ts"
+  },
+  "lint-staged": {
+    "**/*.less": "stylelint --syntax less",
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
+      "prettier --write"
+    ]
   },
   "repository": {
     "type": "git",
@@ -47,6 +63,7 @@
     "@types/webpackbar": "^4.0.0",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
+    "@umijs/fabric": "^2.5.6",
     "autoprefixer": "^9.7.6",
     "case-sensitive-paths-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -70,6 +87,7 @@
     "html-webpack-plugin": "^4.2.0",
     "husky": "^4.3.0",
     "less-loader": "^6.2.0",
+    "lint-staged": "^10.5.4",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "ora": "^4.0.3",
@@ -79,10 +97,12 @@
     "postcss-loader": "^3.0.0",
     "postcss-modules-values": "^3.0.0",
     "postcss-modules-values-replace": "^3.1.0",
+    "prettier": "^2.2.1",
     "prompt-cli": "^0.2.1",
     "raw-loader": "^4.0.2",
     "rimraf": "^3.0.2",
     "rss-parser": "^3.9.0",
+    "stylelint": "^13.11.0",
     "terser-webpack-plugin": "^2.3.5",
     "ts-loader": "^6.2.2",
     "ts-node": "^8.8.2",

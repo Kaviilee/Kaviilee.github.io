@@ -32,28 +32,23 @@ interface MenuProps {
 /**
  * 菜单
  */
-export function Menu (props: MenuProps) {
+export function Menu(props: MenuProps) {
   const { collapsed, children } = props;
   return (
     <nav className={classnames({ [styles.collapsed]: collapsed })}>
       <ul>{children}</ul>
     </nav>
   );
-};
+}
 
 /**
  * 配置式菜单
  */
 export function MenuConfigContainer(props: MenuConfigContainerProps) {
-  const {
-    menuData,
-    collapsed = false,
-    selectedKeys,
-    defaultOpenKeys = [],
-  } = props;
-  const [openKeys, setOpenKeys] = useState<
-    MenuConfigContainerProps['defaultOpenKeys']
-  >(defaultOpenKeys);
+  const { menuData, collapsed = false, selectedKeys, defaultOpenKeys = [] } = props;
+  const [openKeys, setOpenKeys] = useState<MenuConfigContainerProps['defaultOpenKeys']>(
+    defaultOpenKeys,
+  );
 
   /**
    * 处理子菜单展开状态
@@ -67,7 +62,7 @@ export function MenuConfigContainer(props: MenuConfigContainerProps) {
           : [...oldData, key];
       });
     },
-    [openKeys]
+    [openKeys],
   );
 
   /**
@@ -78,9 +73,9 @@ export function MenuConfigContainer(props: MenuConfigContainerProps) {
       const key = data.key || idx;
 
       if (data.type === 'submenu') {
-        const paths = data.items.map(item => item.path)
-        const [ selectedKey ] = selectedKeys
-        const flag = paths.some(p => p === selectedKey)
+        const paths = data.items.map((item) => item.path);
+        const [selectedKey] = selectedKeys;
+        const flag = paths.some((p) => p === selectedKey);
         return (
           <SubMenu
             active={flag}
@@ -116,7 +111,7 @@ export function MenuConfigContainer(props: MenuConfigContainerProps) {
   }, [props]);
 
   return <Menu collapsed={collapsed}>{renderMenuData(menuData, 1)}</Menu>;
-};
+}
 
 Menu.displayName = 'Menu';
 MenuConfigContainer.displayName = 'MenuConfigContainer';

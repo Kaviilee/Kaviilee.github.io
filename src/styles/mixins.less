@@ -3,26 +3,26 @@
     @translateStartY: -100%,
     @translateStartX: 0
 ) {
-    :global(.slide-in-@{direction}-enter) {
-        opacity: 0;
-        transform: translate(@translateStartX, @translateStartY);
-      }
+  :global(.slide-in-@{direction}-enter) {
+    transform: translate(@translateStartX, @translateStartY);
+    opacity: 0;
+  }
 
-      :global(.slide-in-@{direction}-enter-active) {
-        opacity: 1;
-        transform: translate(0);
-        transition: transform 200ms ease-out, opacity 200ms ease-in-out;
-      }
+  :global(.slide-in-@{direction}-enter-active) {
+    transform: translate(0);
+    opacity: 1;
+    transition: transform 200ms ease-out, opacity 200ms ease-in-out;
+  }
 
-      :global(.slide-in-@{direction}-exit) {
-        opacity: 1;
-      }
+  :global(.slide-in-@{direction}-exit) {
+    opacity: 1;
+  }
 
-      :global(.slide-in-@{direction}-exit-active) {
-        opacity: 0;
-        transform: translate(@translateStartX, @translateStartY);
-        transition: transform 300ms linear 100ms, opacity 300ms ease-in-out;
-      }
+  :global(.slide-in-@{direction}-exit-active) {
+    transform: translate(@translateStartX, @translateStartY);
+    opacity: 0;
+    transition: transform 300ms linear 100ms, opacity 300ms ease-in-out;
+  }
 }
 
 .slide-animation(top);

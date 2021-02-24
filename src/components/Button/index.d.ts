@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
+import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react';
 import PropTypes from 'prop-types';
 
 export type ButtonSize = 'sm' | 'lg';

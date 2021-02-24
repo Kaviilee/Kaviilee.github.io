@@ -7,4 +7,4 @@ export interface MessageProps {
   type: MessageType;
 }
 
-type MessageApi = Record<MessageType, (text: string, duration?: number) => void>
+type MessageApi = Record<MessageType, (text: string, duration?: number) => void>;

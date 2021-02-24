@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
-import {base16AteliersulphurpoolLight} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import gfm from 'remark-gfm'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import gfm from 'remark-gfm';
 
-import styles from './index.less'
+import styles from './index.less';
 
 export interface HightLightProps {
   language: string;
@@ -17,29 +17,34 @@ export interface MarkDownProps {
 }
 
 export function MarkDown({ markdown, showLineNumbers }: MarkDownProps) {
-
   const renderHighlight = ({ value, language }: HightLightProps) => {
     return (
       <div className={styles.codeMarkup}>
-        <SyntaxHighlighter language={language} style={base16AteliersulphurpoolLight} showLineNumbers={showLineNumbers}>
+        <SyntaxHighlighter
+          language={language}
+          style={base16AteliersulphurpoolLight}
+          showLineNumbers={showLineNumbers}
+        >
           {value}
         </SyntaxHighlighter>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <ReactMarkdown
       renderers={{
-        code: renderHighlight
+        code: renderHighlight,
       }}
       plugins={[gfm]}
-    >{markdown}</ReactMarkdown>
-  )
+    >
+      {markdown}
+    </ReactMarkdown>
+  );
 }
 
 MarkDown.defaultProps = {
-  showLineNumbers: false
-}
+  showLineNumbers: false,
+};
 
 export default MarkDown;

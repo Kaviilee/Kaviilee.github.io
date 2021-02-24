@@ -3,23 +3,23 @@
  * Live example: https://updown.io
  */
 
- :global(.browser-mockup) {
-  border-top: 2em solid rgba(230, 230, 230, 0.7);
-  box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);
+:global(.browser-mockup) {
   position: relative;
+  border-top: 2em solid rgba(230, 230, 230, 0.7);
   border-radius: 3px 3px 0 0;
+  box-shadow: 0 0.1em 1em 0 rgba(0, 0, 0, 0.4);
 
   &::before {
-    display: block;
     position: absolute;
-    content: '';
     top: -1.25em;
     left: 1em;
+    display: block;
     width: 0.5em;
     height: 0.5em;
-    border-radius: 50%;
     background-color: #f44;
+    border-radius: 50%;
     box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #fb5, 3em 0 0 2px #9b3;
+    content: '';
   }
 
   & > * {
@@ -29,30 +29,30 @@
 
 :global(.with-tab) {
   &::after {
-    display: block;
     position: absolute;
-    content: '';
     top: -2em;
     left: 5.5em;
+    display: block;
     width: 20%;
     height: 0em;
+    border-right: 0.8em solid transparent;
     border-bottom: 2em solid white;
     border-left: 0.8em solid transparent;
-    border-right: 0.8em solid transparent;
+    content: '';
   }
 }
 
 :global(.with-url) {
   &::after {
-    display: block;
     position: absolute;
-    content: '';
     top: -1.6em;
     left: 6.5em;
+    display: block;
     width: calc(100% - 7.5em);
     height: 1.2em;
-    border-radius: 2px;
     background-color: #fff;
+    border-radius: 2px;
+    content: '';
   }
 }
 

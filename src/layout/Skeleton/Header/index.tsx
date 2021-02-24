@@ -16,18 +16,20 @@ interface HeaderProps {
 }
 
 const isPhone = () => {
-  const result = window.matchMedia("(max-width: 768px)");
+  const result = window.matchMedia('(max-width: 768px)');
   return result.matches;
-}
+};
 
 export const Header: FC<HeaderProps> = React.memo(
   ({ collapsed = true, links = [], toggleCollapsed }: HeaderProps) => (
     <header className={styles.header}>
-      {isPhone() ? <div></div> :
+      {isPhone() ? (
+        <div></div>
+      ) : (
         <span className={styles.headerTrigger} onClick={toggleCollapsed}>
           {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}
         </span>
-      }
+      )}
       <ul className={styles.links}>
         {links.map((item, idx) => {
           const aProps = {
@@ -36,12 +38,14 @@ export const Header: FC<HeaderProps> = React.memo(
             ...(item.isBlank ? { target: '_blank' } : {}),
           };
           return (
-            <a key={idx} {...aProps}>{item.label}</a>
-          )
+            <a key={idx} {...aProps}>
+              {item.label}
+            </a>
+          );
         })}
       </ul>
     </header>
-  )
+  ),
 );
 
 Header.displayName = 'Header';

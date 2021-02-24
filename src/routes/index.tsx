@@ -4,12 +4,8 @@ import Introduction from '@/layout/Introduction';
 import Message from '@/pages/UI/Message';
 import Button from '@/pages/UI/Button';
 import Card from '@/pages/UI/Card';
-import Preview from '@/pages/Preview'
-import {
-  StockOutlined,
-  LayoutOutlined,
-  BulbOutlined,
-} from '@ant-design/icons';
+import Preview from '@/pages/Preview';
+import { StockOutlined, LayoutOutlined, BulbOutlined } from '@ant-design/icons';
 
 import Dashboard from '@/pages/Dashboard';
 import NoMatch from '@/pages/NoMatch';
@@ -65,19 +61,19 @@ export const routes: RouteConfig[] = [
             name: 'Button',
             path: '/ui/button',
             disabled: false,
-            component: Button
+            component: Button,
           },
           {
             name: 'Card',
             path: '/ui/card',
-            component: Card
+            component: Card,
           },
           {
             name: 'Message',
             path: '/ui/message',
             disabled: false,
-            component: Message
-          }
+            component: Message,
+          },
         ],
       },
       {

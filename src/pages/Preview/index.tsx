@@ -13,6 +13,6 @@ const Preview: FC<PreviewProps> = ({ meta }: PreviewProps) => (
       <iframe src={meta?.path || ''} className={styles.iframe}></iframe>
     </BrowserMockup>
   </section>
-)
+);
 
 export default Preview;

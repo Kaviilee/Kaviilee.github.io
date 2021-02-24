@@ -2,7 +2,7 @@ import React from 'react';
 import dayjs from 'dayjs';
 // import * as PropTypes from 'prop-types';
 
-import styles from './index.less'
+import styles from './index.less';
 
 export interface LinkItem {
   key?: React.ReactText;
@@ -22,16 +22,16 @@ export const CustomLinks = ({ style, className, links }: CustomLinksProps) => (
     {links?.map((link, index) => {
       return (
         <div className={styles.linkContainer} key={link.key || index}>
-          <a className={styles.link} href={link.url} target="_blank" rel="noreferrer">{ link.urlTitle }</a>
+          <a className={styles.link} href={link.url} target="_blank" rel="noreferrer">
+            {link.urlTitle}
+          </a>
           {link.date ? (
-            <div className={styles.date}>
-              {dayjs(link.date).format('YYYY-MM-DD')}
-            </div>
+            <div className={styles.date}>{dayjs(link.date).format('YYYY-MM-DD')}</div>
           ) : null}
         </div>
-      )
+      );
     })}
   </section>
-)
+);
 
-CustomLinks.displayName = 'CustomLinks'
+CustomLinks.displayName = 'CustomLinks';

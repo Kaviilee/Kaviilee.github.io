@@ -1,7 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
 import { observer } from 'mobx-react';
 
-
 import { Header } from './Header';
 import { Sidebar, UserInfoProps } from './Sidebar';
 
@@ -17,16 +16,16 @@ const links = [
   {
     href: 'https://kaviilee.github.io/blog',
     label: 'Blog',
-    isBlank: true
+    isBlank: true,
   },
   {
     href: 'https://github.com/kaviilee',
     label: 'Github',
-    isBlank: true
+    isBlank: true,
   },
 ];
 
-export function Skeleton ({ children, userInfo }: SkeletonProps) {
+export function Skeleton({ children, userInfo }: SkeletonProps) {
   const [collapsed, setCollapsed] = useState<boolean>(true);
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
@@ -42,16 +41,12 @@ export function Skeleton ({ children, userInfo }: SkeletonProps) {
     <section className={styles.container}>
       <Sidebar collapsed={collapsed} userInfo={userInfo} />
       <section className={styles.main}>
-        <Header
-          collapsed={collapsed}
-          links={links}
-          toggleCollapsed={toggleCollapsed}
-        />
+        <Header collapsed={collapsed} links={links} toggleCollapsed={toggleCollapsed} />
         <main className={styles.content}>{children}</main>
       </section>
     </section>
   );
-};
+}
 
 Skeleton.displayName = 'Skeleton';
 

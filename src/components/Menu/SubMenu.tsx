@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classnames from 'classnames';
 import { UpOutlined, DownOutlined } from '@ant-design/icons';
-import { HoverMenu } from './HoverMenu'
+import { HoverMenu } from './HoverMenu';
 
 import { SubmenuProps } from './index.d';
 
@@ -19,7 +19,7 @@ export const SubMenu: FC<SubmenuProps> = ({
   triggerSubMenuAction,
   children,
   style,
-  items
+  items,
 }: SubmenuProps) => {
   return (
     <li className={styles.subMenu}>
@@ -36,14 +36,8 @@ export const SubMenu: FC<SubmenuProps> = ({
           className: styles.submenuArrow,
         })}
       </div>
-      {!collapsed && (
-        <ul style={{ display: !isOpen ? 'none' : '' }}>{children}</ul>
-      )}
-      {
-          collapsed && (
-            <HoverMenu items={items}></HoverMenu>
-          )
-        }
+      {!collapsed && <ul style={{ display: !isOpen ? 'none' : '' }}>{children}</ul>}
+      {collapsed && <HoverMenu items={items}></HoverMenu>}
     </li>
   );
-}
+};

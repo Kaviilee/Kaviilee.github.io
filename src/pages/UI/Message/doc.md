@@ -30,4 +30,3 @@ const warn = () => {
 <Button btnType="default" onClick={success}>Success</Button>
 <Button btnType="default" onClick={warn}>Warn</Button>
 ```
-

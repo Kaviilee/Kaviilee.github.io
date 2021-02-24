@@ -2,14 +2,14 @@ import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 
-import { MenuItemProps } from './index.d'
+import { MenuItemProps } from './index.d';
 
-import styles from './index.less'
+import styles from './index.less';
 
 /**
  * 菜单项
  */
-export function MenuItem ({
+export function MenuItem({
   active,
   path,
   icon: Icon,
@@ -18,7 +18,7 @@ export function MenuItem ({
   disabled,
   disabledTips,
   style,
-  level
+  level,
 }: MenuItemProps) {
   return (
     <li
@@ -37,4 +37,4 @@ export function MenuItem ({
       </Link>
     </li>
   );
-};
+}

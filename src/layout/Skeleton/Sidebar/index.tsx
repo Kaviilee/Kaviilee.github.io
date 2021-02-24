@@ -1,4 +1,3 @@
-
 import React, { FC, memo } from 'react';
 import classnames from 'classnames';
 import { useHistory } from 'react-router-dom';
@@ -40,13 +39,10 @@ const UserInfoArea: FC<UserInfoAreaProps> = memo(
         <p className={styles.nickname}>{name}</p>
       </section>
     );
-  }
+  },
 );
 
-export const Sidebar: React.FC<SidebarProps> = ({
-  collapsed = true,
-  userInfo,
-}: SidebarProps) => {
+export const Sidebar: React.FC<SidebarProps> = ({ collapsed = true, userInfo }: SidebarProps) => {
   return (
     <aside className={classnames(styles.sidebar, { collapsed })}>
       <UserInfoArea avatar={userInfo?.avatar_url} name={userInfo?.name} path="/" />
