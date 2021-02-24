@@ -1,13 +1,12 @@
 import React from 'react';
-import { Card, Button, MarkDown } from 'Components/index';
+import { Card, Button, MarkDown } from '@/components';
 import docMd from './doc.md';
 
 import styles from './index.less';
 
 const ButtonDisplay: React.FC = () => {
-  console.log(docMd);
   return (
-    <Card title="Button">
+    <Card title="Button 按钮">
       <section>
         <Button btnType="dashed">dashed</Button>
         <Button btnType="default" className={styles.buttonBetween}>

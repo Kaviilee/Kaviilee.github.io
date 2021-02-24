@@ -1,6 +1,5 @@
 import React from 'react';
-import Card from 'Components/Card';
-import MarkDown from 'Components/MarkDown';
+import { Card, MarkDown } from '@/components'
 import doc from './doc.md';
 
 import styles from './index.less';

@@ -1,5 +1,4 @@
 import { resolve } from 'path';
-import { PROJECT_PATH } from '../../../config/constant'
 
 export function getCssLoaderOption({
   hashOutput,
@@ -12,7 +11,7 @@ export function getCssLoaderOption({
   return {
     modules: {
       mode: 'local',
-      context: resolve(PROJECT_PATH, 'src'),
+      context: resolve(__dirname, '../../../src'),
       localIdentName,
     },
     localsConvention: 'camelCaseOnly',

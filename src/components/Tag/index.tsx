@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
+import classNames, {  } from 'classnames';
 import { CloseOutlined } from '@ant-design/icons';
 
 import styles from './index.less';
@@ -7,10 +7,12 @@ import styles from './index.less';
 export interface TagProps {
   closable?: boolean;
   onClose?: (e: React.MouseEvent) => void;
+  color?: string;
   children: React.ReactChild;
+  style?: { [id: string]: any };
 }
 
-export const Tag: React.FC<TagProps> = ({ closable, onClose, children }: TagProps) => {
+export const Tag: React.FC<TagProps> = ({ closable, onClose, children, color, style }: TagProps) => {
   const [tagShow, setTagShow] = useState(true);
 
   const handleClose = (e: React.MouseEvent) => {
@@ -23,11 +25,11 @@ export const Tag: React.FC<TagProps> = ({ closable, onClose, children }: TagProp
   });
 
   return tagShow ? (
-    <span className={classes}>
+    <span className={classes} style={style}>
       {children}
       {closable && (
         <div className={styles.iconWrapper} onClick={handleClose}>
-          <CloseOutlined></CloseOutlined>
+          <span>&times;</span>
         </div>
       )}
     </span>

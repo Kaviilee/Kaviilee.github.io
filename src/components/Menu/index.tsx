@@ -50,6 +50,10 @@ export function MenuConfigContainer(props: MenuConfigContainerProps) {
     defaultOpenKeys,
   );
 
+  useEffect(() => {
+    setOpenKeys(defaultOpenKeys)
+  }, [defaultOpenKeys])
+
   /**
    * 处理子菜单展开状态
    */
@@ -59,7 +63,7 @@ export function MenuConfigContainer(props: MenuConfigContainerProps) {
         return openKeys?.includes(key)
           ? // 如果触发展开的 key 已经存在，那就移除它
             oldData?.filter((k) => k !== key)
-          : [...oldData, key];
+          : [...oldData!, key];
       });
     },
     [openKeys],
@@ -74,7 +78,7 @@ export function MenuConfigContainer(props: MenuConfigContainerProps) {
 
       if (data.type === 'submenu') {
         const paths = data.items.map((item) => item.path);
-        const [selectedKey] = selectedKeys;
+        const [selectedKey] = selectedKeys!;
         const flag = paths.some((p) => p === selectedKey);
         return (
           <SubMenu

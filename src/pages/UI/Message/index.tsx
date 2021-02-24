@@ -1,5 +1,5 @@
 import React from 'react';
-import { message, Card, Button, MarkDown, Tag } from 'Components/index';
+import { message, Card, Button, MarkDown, Tag } from 'Components';
 import styles from './index.less';
 import docMd from './doc.md';
 
@@ -35,7 +35,7 @@ const MessageDisplay: React.FC = () => {
       <Button className={styles.buttonBetween} btnType="default" onClick={warn}>
         Warn
       </Button>
-      {/* <Tag>test</Tag> */}
+      <Tag closable style={{ color: 'red' }}>支棱起来啊</Tag>
 
       <div className={styles.codeContent}>
         <MarkDown markdown={docMd}></MarkDown>

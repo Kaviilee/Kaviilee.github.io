@@ -1,6 +1,7 @@
 import path from 'path';
 import { CustomConfig } from './config.d';
-import { PROJECT_PATH } from '../constant'
+
+const PROJECT_PATH = path.resolve(__dirname, '..', '..')
 
 const projectPaths: CustomConfig = {
   // 源码目录

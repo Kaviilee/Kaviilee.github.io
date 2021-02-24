@@ -15,11 +15,13 @@ export interface NavProps {
 export const Nav: FC<NavProps> = ({ collapsed = false }: NavProps) => {
   const router = useRouter();
   const [selectedKeys, setSelectedKeys] = useState<string[]>([]);
+  const [defaultOpenKeys, setDefaultOpenKeys] = useState<string[]>([])
 
   const menuData = routesToMenuData(routes);
 
   useEffect(() => {
-    router.pathname;
+    const regex = /\/\w+/;
+    setDefaultOpenKeys(router.pathname.match(regex) || [])
     setSelectedKeys([router.pathname]);
   }, [router]);
 
@@ -28,7 +30,7 @@ export const Nav: FC<NavProps> = ({ collapsed = false }: NavProps) => {
       menuData={menuData}
       collapsed={collapsed}
       selectedKeys={selectedKeys}
-      defaultOpenKeys={['/preview']}
+      defaultOpenKeys={defaultOpenKeys}
     />
   );
 };

@@ -1,5 +1,4 @@
 import { observable, action } from 'mobx';
-import { GITHUB_USER_INFO_KEY } from 'Config/constant';
 import siteConfig from 'Config/site';
 
 export interface GithubUserInfo {
@@ -46,7 +45,7 @@ export class SkeletonStore {
   @action
   async initUserInfo() {
     // 从缓存读取数据
-    const currentUser = localStorage.getItem(GITHUB_USER_INFO_KEY);
+    const currentUser = localStorage.getItem('GITHUB_USER_INFO_KEY');
     if (currentUser) {
       this.githubUserInfo = JSON.parse(currentUser);
     }
@@ -56,7 +55,7 @@ export class SkeletonStore {
       const result = await this.fetchUserInfo();
 
       this.githubUserInfo = result;
-      localStorage.setItem(GITHUB_USER_INFO_KEY, JSON.stringify(result));
+      localStorage.setItem('GITHUB_USER_INFO_KEY', JSON.stringify(result));
     } catch (err) {
       console.warn('获取信息失败: ', err);
     }

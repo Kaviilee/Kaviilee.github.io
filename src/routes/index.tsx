@@ -58,18 +58,18 @@ export const routes: RouteConfig[] = [
         icon: BulbOutlined,
         routes: [
           {
-            name: 'Button',
+            name: 'Button 按钮',
             path: '/ui/button',
             disabled: false,
             component: Button,
           },
           {
-            name: 'Card',
+            name: 'Card 卡片',
             path: '/ui/card',
             component: Card,
           },
           {
-            name: 'Message',
+            name: 'Message 提示',
             path: '/ui/message',
             disabled: false,
             component: Message,
