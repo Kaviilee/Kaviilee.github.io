@@ -51,8 +51,8 @@ export function MenuConfigContainer(props: MenuConfigContainerProps) {
   );
 
   useEffect(() => {
-    setOpenKeys(defaultOpenKeys)
-  }, [defaultOpenKeys])
+    setOpenKeys(defaultOpenKeys);
+  }, [defaultOpenKeys]);
 
   /**
    * 处理子菜单展开状态

@@ -7,6 +7,7 @@ import styles from './index.less';
 const ButtonDisplay: React.FC = () => {
   return (
     <Card title="Button 按钮">
+      <p className="subtitle">按钮用于开始一个即时操作。</p>
       <section>
         <Button btnType="dashed">dashed</Button>
         <Button btnType="default" className={styles.buttonBetween}>

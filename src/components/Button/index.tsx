@@ -9,8 +9,8 @@ import { ButtonProps } from './index.d';
 function Button(props: ButtonProps) {
   const { className, disabled, size, btnType, children, href, block, ...restProps } = props;
 
-  let s = size?.toLowerCase().replace(/^\S/, (L) => L.toUpperCase());
-  let b = btnType?.toLowerCase().replace(/^\S/, (L) => L.toUpperCase());
+  const s = size?.toLowerCase().replace(/^\S/, (L) => L.toUpperCase());
+  const b = btnType?.toLowerCase().replace(/^\S/, (L) => L.toUpperCase());
   const classes = classNames(styles.btn, className, {
     [`${styles[`btn${s}`]}`]: s,
     [`${styles[`btn${b}`]}`]: b,

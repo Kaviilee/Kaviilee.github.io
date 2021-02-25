@@ -1,5 +1,5 @@
 import React from 'react';
-import { message, Card, Button, MarkDown, Tag } from 'Components';
+import { message, Card, Button, MarkDown } from '@/components';
 import styles from './index.less';
 import docMd from './doc.md';
 
@@ -21,8 +21,8 @@ const MessageDisplay: React.FC = () => {
   };
 
   return (
-    <Card title="Message">
-      <p className={styles.subtitle}>全局展示操作反馈信息。</p>
+    <Card title="Message 提示">
+      <p className="subtitle">全局展示操作反馈信息。</p>
       <Button btnType="default" onClick={info}>
         Info
       </Button>
@@ -35,7 +35,6 @@ const MessageDisplay: React.FC = () => {
       <Button className={styles.buttonBetween} btnType="default" onClick={warn}>
         Warn
       </Button>
-      <Tag closable style={{ color: 'red' }}>支棱起来啊</Tag>
 
       <div className={styles.codeContent}>
         <MarkDown markdown={docMd}></MarkDown>

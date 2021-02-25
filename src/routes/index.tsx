@@ -1,9 +1,7 @@
 // import React from 'react';
 import Skeleton from '@/layout/Skeleton';
 import Introduction from '@/layout/Introduction';
-import Message from '@/pages/UI/Message';
-import Button from '@/pages/UI/Button';
-import Card from '@/pages/UI/Card';
+import { Message, Button, Card, Tag } from '@/pages/UI';
 import Preview from '@/pages/Preview';
 import { StockOutlined, LayoutOutlined, BulbOutlined } from '@ant-design/icons';
 
@@ -73,6 +71,12 @@ export const routes: RouteConfig[] = [
             path: '/ui/message',
             disabled: false,
             component: Message,
+          },
+          {
+            name: 'Tag 标签',
+            path: '/ui/tag',
+            disabled: false,
+            component: Tag,
           },
         ],
       },
