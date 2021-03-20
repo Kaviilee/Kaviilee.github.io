@@ -7,6 +7,8 @@ import { createCSSRule } from './css/create-css-rule';
 
 import config from '../../config/webpack/base';
 
+// import EndWebpackPlugin from '../../config/webpack/plugins/endwebpackplugin'
+
 const WebpackBar = require('webpackbar');
 const { ESBuildPlugin } = require('esbuild-loader');
 
@@ -48,6 +50,7 @@ const webpackConfig: Configuration = {
     // 自动解析确定的扩展
     extensions: ['.js', '.ts', '.tsx'],
     alias: config.commonAlias,
+    // modules: [path.resolve(__dirname, '../../node_modules')]
   },
   externals: config.externals,
   module: {
@@ -108,7 +111,8 @@ const webpackConfig: Configuration = {
       // markdown
       {
         test: /\.md$/,
-        loader: 'raw-loader'
+        loader: 'raw-loader',
+        // include: path.resolve(__dirname, '../../src/pages/UI')
       }
     ],
   },
@@ -135,7 +139,14 @@ const webpackConfig: Configuration = {
     }),
     new WebpackBar(),
     new ESBuildPlugin(),
-  ],
+  //   new EndWebpackPlugin(() => {
+  //     // Webpack 构建成功，并且文件输出了后会执行到这里，在这里可以做发布文件操作
+  //     console.log('done')
+  //   }, (err: any) => {
+  //     // Webpack 构建失败，err 是导致错误的原因
+  //     console.error(err);
+  //   })
+  // ],
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
