@@ -3,8 +3,8 @@ import config from './index';
 
 export const toolsList = [
   {
-    url: 'https://www.zhangxinxu.com/sp/base64.html',
-    urlTitle: '任意文件转base64'
+    url: 'https://tc39.es/ecma262/',
+    urlTitle: 'ECMAScript Language Specfication'
   },
   {
     url: 'https://regexper.com/',
@@ -12,15 +12,23 @@ export const toolsList = [
   },
   {
     url: 'https://tool.lu/imageholder/?tdsourcetag=s_pctim_aiomsg',
-    urlTitle: '图片占位'
+    urlTitle: '图片占位 | 生成空白占位图片'
   },
   {
     url: 'https://www.favicon-generator.org/',
-    urlTitle: 'favicon生成'
+    urlTitle: 'favicon 生成 | 生成成套的favicon'
   },
   {
     url: 'https://github.com/conwnet/github1s',
-    urlTitle: 'github1s | One second to read GitHub code with VS Code.'
+    urlTitle: 'Github1s | One second to read GitHub code with VS Code.'
+  },
+  {
+    url: 'https://github.com/trending',
+    urlTitle: 'Github Trending | See what the GitHub community is most excited about today.'
+  },
+  {
+    url: 'https://iconpark.bytedance.com/',
+    urlTitle: 'IconPark | Bytedance icon source.'
   }
 ];
 
@@ -38,6 +46,21 @@ export const recommendList = [
     urlTitle: '廖雪峰的官方网站'
   }
 ];
+
+export const books = [
+  {
+    url: 'https://book.douban.com/subject/10546125/',
+    urlTitle: 'JavaScript高级程序设计'
+  },
+  {
+    url: 'https://book.douban.com/subject/26745943/',
+    urlTitle: 'CSS揭秘'
+  },
+  {
+    url: 'https://es6.ruanyifeng.com/',
+    urlTitle: 'ES6标准入门'
+  }
+]
 
 export const fetchRSS = async (limit?: number) => {
   const parser = new Parser();

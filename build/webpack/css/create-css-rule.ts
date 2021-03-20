@@ -39,13 +39,13 @@ export function createCSSRule(
       },
     },
     // 自动给样式文件生成 .d.ts 文件
-    // {
-    //   loader: 'css-modules-typescript-loader',
-    //   options: {
-    //     mode: 'emit',
-    //     // mode: isOnCI ? 'verify' : 'emit',
-    //   },
-    // },
+    {
+      loader: 'css-modules-typescript-loader',
+      options: {
+        mode: 'emit',
+        // mode: isOnCI ? 'verify' : 'emit',
+      },
+    },
     {
       loader: 'css-loader',
       options: {

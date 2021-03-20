@@ -34,6 +34,9 @@ const genUrlLoaderOptions = (dir: string) => ({
 });
 
 const webpackConfig: Configuration = {
+  stats: {
+    children: false
+  },
   entry: config.entry,
   output: {
     path: config.buildRoot,

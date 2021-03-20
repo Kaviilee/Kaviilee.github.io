@@ -2,7 +2,7 @@ import React from 'react';
 
 import Empty from 'Components/Empty';
 import { Card } from 'Components/Card';
-import { fetchRSS, recommendList, toolsList } from 'Config/site/dashboard';
+import { fetchRSS, recommendList, toolsList, books } from 'Config/site/dashboard';
 import { CustomLinks, LinkItem } from './components/CustomLinks';
 
 import styles from './index.less';
@@ -29,7 +29,14 @@ export const Dashboard: React.FC = () => {
           <CustomLinks links={toolsList}></CustomLinks>
         </Card>
       </section>
-      <Card style={{ height: 300 }}>
+      <Card title="前端书单">
+        {
+          books.map(book => (
+            <a href={book.url} className={styles.link} target="blank" key={book.urlTitle}>{book.urlTitle}</a>
+          ))
+        }
+      </Card>
+      <Card style={{ height: 295 }}>
         <Empty></Empty>
       </Card>
     </section>
