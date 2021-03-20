@@ -938,6 +938,7 @@ pre {
   gap: 16px;
   height: 100%;
   overflow-y: auto;
+  grid-template-columns: repeat(2, 1fr);
 }
 @media (min-width: 480px) {
   ._1lUjs5HptQtV5PSBHon2Ic {
@@ -973,5 +974,17 @@ pre {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+}
+._1RLqoroW_tjW03lVJmuDrI {
+  color: #527ed1;
+}
+._1RLqoroW_tjW03lVJmuDrI:not(:last-of-type) {
+  margin-right: 10px;
+  position: relative;
+}
+._1RLqoroW_tjW03lVJmuDrI:not(:last-of-type)::after {
+  content: ',';
+  position: absolute;
+  right: -5px;
 }
 
