@@ -146,7 +146,7 @@ const webpackConfig: Configuration = {
   //     // Webpack 构建失败，err 是导致错误的原因
   //     console.error(err);
   //   })
-  // ],
+  ],
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
