@@ -983,6 +983,7 @@ pre {
   position: relative;
 }
 ._1RLqoroW_tjW03lVJmuDrI:not(:last-of-type)::after {
+  color: black;
   content: ',';
   position: absolute;
   right: -5px;
