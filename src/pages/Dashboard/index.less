@@ -2,10 +2,10 @@
 
 .container {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   height: 100%;
   overflow-y: auto;
-  grid-template-columns: repeat(2, 1fr);
 }
 @media (min-width: @screen-xs-min) {
   .container {
@@ -48,13 +48,13 @@
   color: #527ed1;
 
   &:not(:last-of-type) {
-    margin-right: 10px;
     position: relative;
+    margin-right: 10px;
     &::after {
-      color: black;
-      content: ',';
       position: absolute;
       right: -5px;
+      color: black;
+      content: ',';
     }
   }
 }

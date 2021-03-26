@@ -22,13 +22,13 @@ export const CustomLinks = ({ style, className, links }: CustomLinksProps) => (
     {links?.map((link, index) => {
       return (
         <div className={styles.linkContainer} key={link.key || index}>
-          {
-            link?.url ?
-              <a className={styles.link} href={link.url} target="_blank" rel="noreferrer">
-                {link.urlTitle}
-              </a>
-            : <span>{ link.urlTitle }</span>
-          }
+          {link?.url ? (
+            <a className={styles.link} href={link.url} target="_blank" rel="noreferrer">
+              {link.urlTitle}
+            </a>
+          ) : (
+            <span>{link.urlTitle}</span>
+          )}
           {link.date ? (
             <div className={styles.date}>{dayjs(link.date).format('YYYY-MM-DD')}</div>
           ) : null}

@@ -30,11 +30,11 @@ export const Dashboard: React.FC = () => {
         </Card>
       </section>
       <Card title="前端书单">
-        {
-          books.map(book => (
-            <a href={book.url} className={styles.link} target="blank" key={book.urlTitle}>{book.urlTitle}</a>
-          ))
-        }
+        {books.map((book) => (
+          <a href={book.url} className={styles.link} target="blank" key={book.urlTitle}>
+            {book.urlTitle}
+          </a>
+        ))}
       </Card>
       <Card style={{ height: 295 }}>
         <Empty></Empty>
