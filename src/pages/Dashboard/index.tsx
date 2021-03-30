@@ -11,7 +11,7 @@ export const Dashboard: React.FC = () => {
   const [latestPosts, setLatestPost] = React.useState<LinkItem[]>([]);
 
   React.useEffect(() => {
-    fetchRSS(10).then((list) => {
+    fetchRSS(14).then((list) => {
       setLatestPost(list);
     });
   }, []);
@@ -36,7 +36,7 @@ export const Dashboard: React.FC = () => {
           </a>
         ))}
       </Card>
-      <Card style={{ height: 295 }}>
+      <Card style={{ minHeight: 295 }}>
         <Empty></Empty>
       </Card>
     </section>

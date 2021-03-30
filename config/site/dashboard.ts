@@ -72,7 +72,9 @@ export const fetchRSS = async (limit?: number) => {
     date: item.pubDate || ''
   }));
 
-  limit && result.slice(0, limit);
+  let res = [] as typeof result
 
-  return result;
+  limit && (res = result.slice(0, limit));
+
+  return res;
 }
